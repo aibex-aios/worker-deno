@@ -1,0 +1,12 @@
+name: worker-deno
+version: 0.1.0
+type: worker
+description: "Arbeitspferd deno: JavaScript- und TypeScript-Laufzeit, aus den Wheels von PyPI (macOS arm64 und x86_64, Linux x86_64 und aarch64 mit glibc ab 2.27)"
+license: Apache-2.0
+requires:
+  aios: ">=0.5,<0.6"
+worker:
+  kind: python
+  requirements: worker/requirements.lock
+  programs: [deno]
+  check: deno --version
